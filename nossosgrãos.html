@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nossos grãos</title>
+    <link rel="stylesheet" href="nossosgrãos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+</head>
+
+<body>
+<header>
+  <a href="index.html"><img class="logo" src="Logo.png" alt="logo"></a>
+
+  <ul class="menu">
+      <a href="https://letscoffee.goomer.app/menu"><li>cardápio</li></a>
+      <a href="nossosgrãos.html"><li>faça seu coado</li></a>
+      <a href="#"><li>nossos grãos</li></a>
+      <a href="#"><li>blog</li></a>
+      <a href="#" id="Inscreva-se-btn"><li>Já tem uma conta?</li></a>
+  </ul>
+  <div class="dark-mode-toggle">
+    <input type="checkbox" id="darkModeToggle" />
+    <label for="darkModeToggle"></label>
+  </div>
+  
+</header>
+    
+  <h5>conheça nossos <br>
+     cafés especiais</h5>
+
+     <button class="filter-button" onclick="openFilterModal()">filtrar</button>
+
+<!-- Modal de Filtro -->
+<div id="filterModal" class="modal-content1">
+    <span class="close1" onclick="closeFilterModal()">&times;</span>
+    <h6>opções de Filtro</h6>
+    <div class="filter-options">
+      <label>
+        <input class="check" type="checkbox" name="filtro1" value="catuaí">
+        catuaí
+      </label>
+      <label>
+        <input class="check" type="checkbox" name="filtro2" value="bourbon">
+        bourbon
+      </label>
+      <label>
+        <input class="check" type="checkbox" name="filtro3" value="guesha">
+        guesha
+      </label>
+      <!-- Adicione mais opções de filtro conforme necessário -->
+    </div>
+    
+    
+    <button class="apli" onclick="filtrarCards()">aplicar filtro</button>
+</div>
+
+  <div class="conteiner">
+    <div class="cards-wrapper">
+      <div class="card current-iten"  data-filtro1="catuaí" data-filtro2="" data-filtro3="" data-title="Produto 1" data-description="catuaí vermelho">
+        <img class="image-default" src="117960866_2762111820739684_8888816499722538550_n.jpg" alt="Imagem do Produto">
+        <img class="image-hover" src="info-mezzanotte.jpg" alt="Imagem do Produto durante o hover">
+        <h3>Nome do Produto</h3>
+        <p>Descrição do Produto</p>
+     </div>
+      
+      <div class="card current-iten"  data-title="Produto 2" data-description="Descrição do Produto " data-filtro1="" data-filtro2="bourbon" data-filtro3="">
+        <img class="image-default" src="279005299_3836437939814210_692940873935983022_n.jpg" alt="Imagem do Produto" data-filtro1="Característica 1" data-filtro2="Característica 2" data-filtro3="Característica 3">
+        <img class="image-hover" src="info-mezzanotte.jpg" alt="Imagem do Produto durante o hover">
+        <h3>Nome do Produto</h3>
+            <p>Descrição do Produto</p>
+      </div>
+      <div class="card current-iten"  data-filtro1="catuaí" data-filtro2="" data-filtro3="" data-title="Produto 3" data-description="catuaí vermelho">     
+        <img class="image-default" src="245498542_3133624640199846_3983274045722879994_n.jpg" alt="Imagem do Produto" data-filtro1="Característica 1" data-filtro2="Característica 2" data-filtro3="Característica 3">
+        <img class="image-hover" src="info-mezzanotte.jpg" alt="Imagem do Produto durante o hover">
+        <h3>Nome do Produto</h3>
+        <p>Descrição do Produto</p>
+      </div>
+      <div class="card current-iten"  data-title="Produto 1" data-description="Descrição do Produto " data-filtro1="" data-filtro2="" data-filtro3="guesha">
+                <img class="image-default" src="117960866_2762111820739684_8888816499722538550_n.jpg" alt="Imagem do Produto" data-filtro1="Característica 1" data-filtro2="Característica 2" data-filtro3="Característica 3">
+                <img class="image-hover" src="info-mezzanotte.jpg" alt="Imagem do Produto durante o hover">
+                <h3>Nome do Produto</h3>
+                <p>Descrição do Produto</p>
+            </div>
+              <div class="card current-iten"  data-title="Produto 1" data-description="Descrição do Produto " data-filtro1="" data-filtro2="" data-filtro3="guesha">
+                <img class="image-default" src="279005299_3836437939814210_692940873935983022_n.jpg" alt="Imagem do Produto" data-filtro1="Característica 1" data-filtro2="Característica 2" data-filtro3="Característica 3">
+                <img class="image-hover" src="info-mezzanotte.jpg" alt="Imagem do Produto durante o hover">
+                <h3>Nome do Produto</h3>
+                <p>Descrição do Produto</p>
+              </div>
+              <div class="card current-iten"  data-title="Produto 1" data-description="Descrição do Produto " data-filtro1="" data-filtro2="" data-filtro3="guesha">       
+                <img class="image-default" src="245498542_3133624640199846_3983274045722879994_n.jpg" alt="Imagem do Produto" data-filtro1="Característica 1" data-filtro2="Característica 2" data-filtro3="Característica 3">
+                <img class="image-hover" src="info-mezzanotte.jpg" alt="Imagem do Produto durante o hover">
+                <h3>Nome do Produto</h3>
+                <p>Descrição do Produto</p>
+              </div>
+           
+    <!-- Modal de Filtro -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModalButton" class="close">&times;</span>
+    <div style="width: 700px; height: 500px; position: relative; bottom: 80px; left: 20px;" class="content">
+      <!-- Utilizamos elementos <span> em vez de <h3> e <p> para exibir as informações do card -->
+      <span id="modalTitle" style="display: flex; justify-content: center; white-space:nowrap; position: relative; top: 50px;"></span>
+      <span style="overflow-wrap: break-word; text-align: center;" id="modalDetails"></span>
+    </div>
+  </div>
+</div>
+
+    
+</div>
+
+<script src="grãos.js"></script>
+</body>
+</html>

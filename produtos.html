@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="produtos.css">
+    <title>Let's coffee e-commerce</title>
+</head>
+<body>
+    
+    <header>
+        <img src="Logo Quadrado Acima Branco (RGB).png" alt="logo">
+
+        <ul class="menu">
+            <a href="cardapio.html"><li>inicio</li></a>
+            <a href="#"><li>Serviços</li></a>
+            <a href="#"><li>Sobre</li></a>
+            <a href="#"><li>contatos</li></a>
+            <a href="#" id="Inscreva-se-btn"><li>Já tem uma conta?</li></a>
+        </ul>
+    </header>
+
+        <div class="cart-container">
+            <div class="cart-card" id="cartCard1">
+              <img src="product1.jpg" alt="Product 1">
+              <h3>Product 1</h3>
+              <p>Description of Product 1</p>
+              <span class="price">$19.99</span>
+              <button class="remove-button">Remove</button>
+            </div>
+            
+            <div class="cart-card">
+              <img src="product2.jpg" alt="Product 2">
+              <h3>Product 2</h3>
+              <p>Description of Product 2</p>
+              <span class="price">$29.99</span>
+              <button class="remove-button">Remove</button>
+            </div>
+        
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span id="closeModalButton" class="close">&times;</span>
+              <div style="width: 700px; height: 500px; position: relative; bottom: 80px; left: 20px;" class="content">
+                 <h2  id="modalTitle" style= " display:flex; justify-content: center; white-space:nowrap; position: relative; top: 50px;"></h2>
+                    <p style= "overflow-wrap: break-word; text-align: center;" id="modalDetails"></p>
+                </div>
+            </div>
+                <script src="script.js"></script>
+</body>
+</html>
