@@ -1,4 +1,3 @@
-
 // Obtém os elementos do HTML
 const cardsWrapper = document.querySelector('.cards-wrapper');
 const cards = Array.from(document.querySelectorAll('.card'));
@@ -7,7 +6,7 @@ const arrowRight = document.querySelector('.arrow-rigth');
 const modal = document.getElementById("myModal");
 
 // Define o índice do card atual
-let currentIndex = 1;
+let currentIndex = 0;
 
 // Adiciona os ouvintes de eventos para as setas
 arrowLeft.addEventListener('click', () => navigateCards(-1));
@@ -37,10 +36,21 @@ function navigateCards(direction) {
   cards[currentIndex].classList.add('current-iten');
 }
 
+// Função para resetar a posição dos cards ao aplicar filtros
+function resetCardPosition() {
+  currentIndex = 0;
+  const cardWidth = cards[0].offsetWidth;
+  const distanceToMove = -currentIndex * cardWidth;
+  cardsWrapper.style.transform = `translateX(${distanceToMove}px)`;
+  cards.forEach((card) => card.classList.remove('current-iten'));
+  cards[currentIndex].classList.add('current-iten');
+}
+
 // Abre o modal quando um card for clicado
 cards.forEach((card, index) => {
   card.addEventListener('click', () => {
     if (index === currentIndex) {
+      resetCardPosition();
       modal.style.display = 'block';
     }
   });
@@ -58,6 +68,8 @@ window.addEventListener('click', (event) => {
     modal.style.display = 'none';
   }
 });
+
+// Restante do seu código JavaScript...
 
 // Obtém os elementos do HTML
 const darkModeToggle = document.getElementById('darkModeToggle');
